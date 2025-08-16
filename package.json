@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "echo 'Static site - no build required'",
-    "vercel-build": "echo 'Vercel build complete'"
+    "build": "echo 'Static site ready - no build needed'",
+    "vercel-build": "echo 'Vercel build complete - ready to deploy'"
   },
   "keywords": [
     "ai",
