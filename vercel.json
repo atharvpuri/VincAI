@@ -2,14 +2,14 @@
   "version": 2,
   "name": "vincai",
   "functions": {
-    "server.js": {
+    "api/chat.js": {
       "maxDuration": 30
     }
   },
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
     },
     {
       "src": "/(.*)",

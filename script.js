@@ -226,7 +226,12 @@ class VincAI {
         try {
             console.log('📡 Calling backend API for web scraping...');
             
-            const response = await fetch('http://localhost:3000/api/chat', {
+            // Use relative path for production (Vercel) and absolute path for development
+            const apiUrl = window.location.hostname === 'localhost' 
+                ? 'http://localhost:3000/api/chat'
+                : '/api/chat';
+            
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
