@@ -1,22 +1,24 @@
 {
   "version": 2,
   "name": "vincai",
-  "functions": {
-    "api/chat.js": {
-      "maxDuration": 30
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "*.{html,css,js,json}",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "routes": [
     {
-      "src": "/api/chat",
-      "dest": "/api/chat.js"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }

@@ -385,7 +385,7 @@ function generateEnhancedResponse(query, sources) {
 }
 
 // Vercel serverless function handler
-export default async function handler(req, res) {
+async function handler(req, res) {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -446,3 +446,6 @@ export default async function handler(req, res) {
         res.status(405).json({ error: 'Method not allowed' });
     }
 }
+
+// Export for Vercel
+module.exports = handler;
