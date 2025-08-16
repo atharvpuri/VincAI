@@ -1,24 +1,28 @@
 {
   "version": 2,
   "name": "vincai",
+  "buildCommand": "echo 'Build complete - VincAI ready'",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/chat.js",
       "use": "@vercel/node"
     },
     {
-      "src": "*.{html,css,js,json}",
+      "src": "*.{html,css,js,json,md}",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
     },
     {
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "framework": null
 }
