@@ -2,10 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use Render's PORT or default to 3000
 
 // Middleware
 app.use(cors());
@@ -444,9 +443,16 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Serve the main page
+// Root endpoint
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.json({ 
+        message: 'VincAI Backend API is running!',
+        endpoints: {
+            health: '/api/health',
+            chat: '/api/chat (POST)'
+        },
+        status: 'active'
+    });
 });
 
 // Start server
