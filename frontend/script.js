@@ -226,10 +226,10 @@ class VincAI {
         try {
             console.log('📡 Calling backend API for web scraping...');
             
-            // Use relative path for production (Vercel) and absolute path for development
+            // Backend deployed on Render, Frontend on Netlify
             const apiUrl = window.location.hostname === 'localhost' 
                 ? 'http://localhost:3000/api/chat'
-                : '/api/chat';
+                : 'https://vincaibackend-1.onrender.com/api/chat';
             
             const response = await fetch(apiUrl, {
                 method: 'POST',
