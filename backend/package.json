@@ -1,0 +1,26 @@
+{
+  "name": "vincai",
+  "version": "2.1.1",
+  "description": "VincAI - Advanced AI Assistant with Web Scraping",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ai",
+    "web-scraping",
+    "chatgpt-clone",
+    "vincai",
+    "serverless"
+  ],
+  "author": "VincAI Team",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
